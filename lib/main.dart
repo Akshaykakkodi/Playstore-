@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pstore/Home.dart';
 
 import 'constatnts.dart';
+import 'homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home:  Home(constants: Gameslist(),),
+      home:  Homepage(constants: Gameslist(),),
     );
   }
 }
