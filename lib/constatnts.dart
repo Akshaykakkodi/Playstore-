@@ -46,5 +46,93 @@ class Gameslist {
     }
   ];
 
+  List<Map> apps = [
+    {
+      "title": "Whatsapp",
+      "image": "https://clipart.info/images/ccovers/1499955335whatsapp-icon-logo-png.png",
+      "subtitle": "Social",
+      "rating": "4",
+      "size": "60 MB"
+    },
+
+    {
+      "title": "Messenger",
+      "image": "https://img.theweek.in/content/dam/week/news/biztech/2018/february/facebook-messenger-logo.jpg",
+      "subtitle": "Social",
+      "rating": "4.3",
+      "size": "100 MB"
+    },
+
+    {
+      "title": "Youtube",
+      "image": "https://centa.org/wp-content/uploads/2021/03/YouTube-logo.jpg",
+      "subtitle": "Video",
+      "rating": "4.9",
+      "size": "80 MB"
+    },
+    {
+      "title": "Google pay",
+      "image": "https://cdn.dribbble.com/users/7263922/screenshots/16468015/frame_4_4x.png",
+      "subtitle": "Money",
+      "rating": "4.2",
+      "size": "60 MB"
+    },
+    {
+      "title": "Mx player",
+      "image": "https://i.pinimg.com/736x/05/45/d3/0545d396204a8fcb3120b388a5d0782f.jpg",
+      "subtitle": "Video",
+      "rating": "4",
+      "size": "208 MB"
+    },
+    {
+      "title": "Pics art",
+      "image": "https://cdnblog.picsart.com/2021/07/icon-square-780x780.jpg",
+      "subtitle": "Camera",
+      "rating": "4.3",
+      "size": "160 MB"
+    }
+  ];
+  List<Map> books = [
+    {
+      "title": "Modern spaces",
+      "image": "https://template.canva.com/EADaopxBna4/1/0/251w-ujD6UPGa9hw.jpg",
+      "rating": "4",
+      "price": "Rs 60"
+    },
+
+    {
+      "title": "Harry potter",
+      "image": "https://images.ctfassets.net/usf1vwtuqyxm/3d9kpFpwHyjACq8H3EU6ra/85673f9e660407e5e4481b1825968043/English_Harry_Potter_4_Epub_9781781105672.jpg",
+      "rating": "4.3",
+      "price": "Rs 200"
+    },
+
+    {
+      "title": "Spook",
+      "image": "https://cdn.tutsplus.com/psd/uploads/legacy/psdtutsarticles/2010/inspiration_photobookcovers/spook.jpg",
+      "rating": "4.9",
+      "price": "Rs 180"
+    },
+    {
+      "title": "Outsider",
+      "image": "https://b9r8e6p9.stackpathcdn.com/app/uploads/2018/06/Outsider.jpg",
+      "rating": "4.2",
+      "price": "Rs 260"
+    },
+    {
+      "title": "Lear",
+      "image": "https://images.squarespace-cdn.com/content/v1/563890dce4b0facc12851d8f/1518946622193-O7MD1082UC2NNF9M722O/Lear+Front.jpg",
+      "rating": "4",
+      "price": "Rs 400"
+    },
+    {
+      "title": "Head stone",
+      "image": "https://images.squarespace-cdn.com/content/v1/563890dce4b0facc12851d8f/1518946022442-7TT8PK3XNRFZH77HEAFY/CCH+Back.jpg",
+      "rating": "4.3",
+      "price": "Rs 160"
+    }
+  ];
+
+
 
 }

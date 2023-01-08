@@ -1,25 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:pstore/searchPage.dart';
 
 import 'constatnts.dart';
 
-class Homepage extends StatefulWidget {
+class Appspage extends StatefulWidget {
   final Gameslist constants;
-  const Homepage({Key? key, required this.constants}) : super(key: key);
+  const Appspage({Key? key,required this.constants}) : super(key: key);
 
   @override
-  State<Homepage> createState() => _HomepageState();
+  State<Appspage> createState() => _AppspageState();
 }
 
-class _HomepageState extends State<Homepage> {
-  int indexnum = 0;
+class _AppspageState extends State<Appspage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-
-
+    return  Scaffold(
       body: Container(
         color: Colors.grey[900],
         child: SingleChildScrollView(
@@ -118,11 +113,11 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: Column(
                         children: [
-                          Text('New & updated games',
+                          Text('Recommended apps for you',
                               style:
                               TextStyle(color: Colors.white, fontSize: 15)),
                           Text(
-                            'selected games of the week',
+                            'trending apps this week',
                             style: TextStyle(color: Colors.grey, fontSize: 11),
                           ),
                         ],
@@ -148,7 +143,7 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         height: 80,
-                        width: 220,
+                        width: 130,
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
@@ -162,7 +157,7 @@ class _HomepageState extends State<Homepage> {
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
                                       image: NetworkImage(widget
-                                          .constants.games1[index]['image']),
+                                          .constants.apps[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -171,31 +166,21 @@ class _HomepageState extends State<Homepage> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(widget.constants
-                                                    .games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
+
                                         Padding(
                                           padding: const EdgeInsets.only(top: 5),
                                           child: Column(
                                             children: [
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['title'],
                                                 style:
                                                 TextStyle(color: Colors.white),
                                               ),
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['subtitle'],
                                                 style: TextStyle(
                                                     fontSize: 13,
@@ -208,7 +193,7 @@ class _HomepageState extends State<Homepage> {
                                                   children: [
                                                     Text(
                                                         widget.constants
-                                                            .games1[index]
+                                                            .apps[index]
                                                         ['rating'],
                                                         style: TextStyle(
                                                             fontSize: 12,
@@ -217,7 +202,7 @@ class _HomepageState extends State<Homepage> {
                                                         color: Colors.grey,
                                                         size: 12),
                                                     Text(
-                                                      widget.constants.games1[index]
+                                                      widget.constants.apps[index]
                                                       ['size'],
                                                       style: TextStyle(
                                                           fontSize: 12,
@@ -248,7 +233,7 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         height: 80,
-                        width: 220,
+                        width: 130,
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
@@ -262,7 +247,7 @@ class _HomepageState extends State<Homepage> {
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
                                       image: NetworkImage(widget
-                                          .constants.games1[index]['image']),
+                                          .constants.apps[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -271,31 +256,21 @@ class _HomepageState extends State<Homepage> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(widget.constants
-                                                    .games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
+
                                         Padding(
                                           padding: const EdgeInsets.only(top: 5),
                                           child: Column(
                                             children: [
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['title'],
                                                 style:
                                                 TextStyle(color: Colors.white),
                                               ),
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['subtitle'],
                                                 style: TextStyle(
                                                     fontSize: 13,
@@ -308,7 +283,7 @@ class _HomepageState extends State<Homepage> {
                                                   children: [
                                                     Text(
                                                         widget.constants
-                                                            .games1[index]
+                                                            .apps[index]
                                                         ['rating'],
                                                         style: TextStyle(
                                                             fontSize: 12,
@@ -317,7 +292,7 @@ class _HomepageState extends State<Homepage> {
                                                         color: Colors.grey,
                                                         size: 12),
                                                     Text(
-                                                      widget.constants.games1[index]
+                                                      widget.constants.apps[index]
                                                       ['size'],
                                                       style: TextStyle(
                                                           fontSize: 12,
@@ -348,7 +323,7 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         height: 80,
-                        width: 220,
+                        width: 130,
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
@@ -362,7 +337,7 @@ class _HomepageState extends State<Homepage> {
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
                                       image: NetworkImage(widget
-                                          .constants.games1[index]['image']),
+                                          .constants.apps[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -371,31 +346,21 @@ class _HomepageState extends State<Homepage> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(widget.constants
-                                                    .games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
+
                                         Padding(
                                           padding: const EdgeInsets.only(top: 5),
                                           child: Column(
                                             children: [
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['title'],
                                                 style:
                                                 TextStyle(color: Colors.white),
                                               ),
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['subtitle'],
                                                 style: TextStyle(
                                                     fontSize: 13,
@@ -408,7 +373,7 @@ class _HomepageState extends State<Homepage> {
                                                   children: [
                                                     Text(
                                                         widget.constants
-                                                            .games1[index]
+                                                            .apps[index]
                                                         ['rating'],
                                                         style: TextStyle(
                                                             fontSize: 12,
@@ -417,7 +382,7 @@ class _HomepageState extends State<Homepage> {
                                                         color: Colors.grey,
                                                         size: 12),
                                                     Text(
-                                                      widget.constants.games1[index]
+                                                      widget.constants.apps[index]
                                                       ['size'],
                                                       style: TextStyle(
                                                           fontSize: 12,
@@ -461,7 +426,7 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         height: 80,
-                        width: 220,
+                        width: 130,
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
@@ -475,7 +440,7 @@ class _HomepageState extends State<Homepage> {
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
                                       image: NetworkImage(widget
-                                          .constants.games1[index]['image']),
+                                          .constants.apps[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -484,31 +449,21 @@ class _HomepageState extends State<Homepage> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(widget.constants
-                                                    .games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
+
                                         Padding(
                                           padding: const EdgeInsets.only(top: 5),
                                           child: Column(
                                             children: [
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['title'],
                                                 style:
                                                 TextStyle(color: Colors.white),
                                               ),
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['subtitle'],
                                                 style: TextStyle(
                                                     fontSize: 13,
@@ -521,7 +476,7 @@ class _HomepageState extends State<Homepage> {
                                                   children: [
                                                     Text(
                                                         widget.constants
-                                                            .games1[index]
+                                                            .apps[index]
                                                         ['rating'],
                                                         style: TextStyle(
                                                             fontSize: 12,
@@ -530,7 +485,7 @@ class _HomepageState extends State<Homepage> {
                                                         color: Colors.grey,
                                                         size: 12),
                                                     Text(
-                                                      widget.constants.games1[index]
+                                                      widget.constants.apps[index]
                                                       ['size'],
                                                       style: TextStyle(
                                                           fontSize: 12,
@@ -561,7 +516,7 @@ class _HomepageState extends State<Homepage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
                         height: 80,
-                        width: 220,
+                        width: 130,
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
@@ -575,7 +530,7 @@ class _HomepageState extends State<Homepage> {
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
                                       image: NetworkImage(widget
-                                          .constants.games1[index]['image']),
+                                          .constants.apps[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -584,31 +539,21 @@ class _HomepageState extends State<Homepage> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(widget.constants
-                                                    .games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
+
                                         Padding(
                                           padding: const EdgeInsets.only(top: 5),
                                           child: Column(
                                             children: [
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['title'],
                                                 style:
                                                 TextStyle(color: Colors.white),
                                               ),
                                               Text(
-                                                widget.constants.games1[index]
+                                                widget.constants.apps[index]
                                                 ['subtitle'],
                                                 style: TextStyle(
                                                     fontSize: 13,
@@ -621,7 +566,7 @@ class _HomepageState extends State<Homepage> {
                                                   children: [
                                                     Text(
                                                         widget.constants
-                                                            .games1[index]
+                                                            .apps[index]
                                                         ['rating'],
                                                         style: TextStyle(
                                                             fontSize: 12,
@@ -630,7 +575,7 @@ class _HomepageState extends State<Homepage> {
                                                         color: Colors.grey,
                                                         size: 12),
                                                     Text(
-                                                      widget.constants.games1[index]
+                                                      widget.constants.apps[index]
                                                       ['size'],
                                                       style: TextStyle(
                                                           fontSize: 12,
