@@ -6,7 +6,7 @@ import 'constatnts.dart';
 
 class Home extends StatefulWidget {
   final Gameslist constants;
-  const Home({Key? key, required this.constants }) : super(key: key);
+  const Home({Key? key, required this.constants}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -20,37 +20,48 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
-        title:
-        Center(
-          child:
-          InkWell(
+        elevation: 0,
+        title: Center(
+          child: InkWell(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Searchpage();
-              },));
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return Searchpage();
+                },
+              ));
             },
             child: Container(
               height: 45,
               width: 300,
-              decoration: BoxDecoration(color: Colors.grey[850],borderRadius: BorderRadius.circular(50)),
+              decoration: BoxDecoration(
+                  color: Colors.grey[850],
+                  borderRadius: BorderRadius.circular(50)),
               child: Row(
                 children: [
-
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Icon(Icons.search),
                   ),
                   SizedBox(width: 10),
-                  Text('Search apps & games',style: TextStyle(fontSize: 15,color: Colors.grey),),
+                  Text(
+                    'Search apps & games',
+                    style: TextStyle(fontSize: 15, color: Colors.grey),
+                  ),
                   SizedBox(width: 16),
                   Icon(Icons.mic),
-                  SizedBox(width: 8,),
+                  SizedBox(
+                    width: 8,
+                  ),
                   Container(
                     height: 35,
                     width: 35,
-                    decoration:  BoxDecoration(image: DecorationImage(image: NetworkImage('https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg'),fit: BoxFit.fill),borderRadius: BorderRadius.circular(20)),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(
+                                'https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg'),
+                            fit: BoxFit.fill),
+                        borderRadius: BorderRadius.circular(20)),
                   )
-
                 ],
               ),
             ),
@@ -69,8 +80,13 @@ class _HomeState extends State<Home> {
               label: 'Apps',
               backgroundColor: Colors.black87),
           BottomNavigationBarItem(
-              icon: Icon(Icons.local_offer), label: 'Offers', backgroundColor: Colors.black87),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Books', backgroundColor: Colors.black87)
+              icon: Icon(Icons.local_offer),
+              label: 'Offers',
+              backgroundColor: Colors.black87),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.book),
+              label: 'Books',
+              backgroundColor: Colors.black87)
         ],
         showUnselectedLabels: true,
         currentIndex: indexnum,
@@ -212,7 +228,7 @@ class _HomeState extends State<Home> {
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
                             Expanded(
@@ -221,8 +237,8 @@ class _HomeState extends State<Home> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                          widget.constants.games1[index]['image']),
+                                      image: NetworkImage(widget
+                                          .constants.games1[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -231,60 +247,66 @@ class _HomeState extends State<Home> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
-                                      children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                               BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                    widget.constants.games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 5),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                widget.constants.games1[index]['title'],
-                                                style:
+                                          image: DecorationImage(
+                                            image: NetworkImage(widget.constants
+                                                .games1[index]['image']),
+                                            fit: BoxFit.fill,
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['title'],
+                                            style:
                                                 TextStyle(color: Colors.white),
-                                              ),
-                                              Text(
-                                                widget.constants.games1[index]['subtitle'],
-                                                style: TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.grey),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(left: 15),
-                                                child: Row(
-                                                  children: [
-                                                    Text( widget.constants.games1[index]['rating'],
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            color: Colors.grey)),
-                                                    Icon(Icons.star,
-                                                        color: Colors.grey,
-                                                        size: 12),
-                                                    Text(
-                                                      widget.constants.games1[index]['size'],
-                                                      style: TextStyle(
-                                                          fontSize: 12,
-                                                          color: Colors.grey),
-                                                    )
-                                                  ],
-                                                ),
-                                              )
-                                            ],
                                           ),
-                                        )
-                                      ],
-                                    ))),
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['subtitle'],
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.grey),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                    widget.constants
+                                                            .games1[index]
+                                                        ['rating'],
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.grey)),
+                                                Icon(Icons.star,
+                                                    color: Colors.grey,
+                                                    size: 12),
+                                                Text(
+                                                  widget.constants.games1[index]
+                                                      ['size'],
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))),
                           ],
                         ),
                       ),
@@ -306,7 +328,7 @@ class _HomeState extends State<Home> {
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
                             Expanded(
@@ -315,8 +337,8 @@ class _HomeState extends State<Home> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                          widget.constants.games1[index]['image']),
+                                      image: NetworkImage(widget
+                                          .constants.games1[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -325,60 +347,66 @@ class _HomeState extends State<Home> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
-                                      children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                               BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                    widget.constants.games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 5),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                widget.constants.games1[index]['title'],
-                                                style:
+                                          image: DecorationImage(
+                                            image: NetworkImage(widget.constants
+                                                .games1[index]['image']),
+                                            fit: BoxFit.fill,
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['title'],
+                                            style:
                                                 TextStyle(color: Colors.white),
-                                              ),
-                                              Text(
-                                                widget.constants.games1[index]['subtitle'],
-                                                style: TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.grey),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(left: 15),
-                                                child: Row(
-                                                  children: [
-                                                    Text( widget.constants.games1[index]['rating'],
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            color: Colors.grey)),
-                                                    Icon(Icons.star,
-                                                        color: Colors.grey,
-                                                        size: 12),
-                                                    Text(
-                                                      widget.constants.games1[index]['size'],
-                                                      style: TextStyle(
-                                                          fontSize: 12,
-                                                          color: Colors.grey),
-                                                    )
-                                                  ],
-                                                ),
-                                              )
-                                            ],
                                           ),
-                                        )
-                                      ],
-                                    ))),
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['subtitle'],
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.grey),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                    widget.constants
+                                                            .games1[index]
+                                                        ['rating'],
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.grey)),
+                                                Icon(Icons.star,
+                                                    color: Colors.grey,
+                                                    size: 12),
+                                                Text(
+                                                  widget.constants.games1[index]
+                                                      ['size'],
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))),
                           ],
                         ),
                       ),
@@ -400,7 +428,7 @@ class _HomeState extends State<Home> {
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
                             Expanded(
@@ -409,8 +437,8 @@ class _HomeState extends State<Home> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                          widget.constants.games1[index]['image']),
+                                      image: NetworkImage(widget
+                                          .constants.games1[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -419,60 +447,66 @@ class _HomeState extends State<Home> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
-                                      children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                               BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                    widget.constants.games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 5),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                widget.constants.games1[index]['title'],
-                                                style:
+                                          image: DecorationImage(
+                                            image: NetworkImage(widget.constants
+                                                .games1[index]['image']),
+                                            fit: BoxFit.fill,
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['title'],
+                                            style:
                                                 TextStyle(color: Colors.white),
-                                              ),
-                                              Text(
-                                                widget.constants.games1[index]['subtitle'],
-                                                style: TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.grey),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(left: 15),
-                                                child: Row(
-                                                  children: [
-                                                    Text( widget.constants.games1[index]['rating'],
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            color: Colors.grey)),
-                                                    Icon(Icons.star,
-                                                        color: Colors.grey,
-                                                        size: 12),
-                                                    Text(
-                                                      widget.constants.games1[index]['size'],
-                                                      style: TextStyle(
-                                                          fontSize: 12,
-                                                          color: Colors.grey),
-                                                    )
-                                                  ],
-                                                ),
-                                              )
-                                            ],
                                           ),
-                                        )
-                                      ],
-                                    ))),
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['subtitle'],
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.grey),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                    widget.constants
+                                                            .games1[index]
+                                                        ['rating'],
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.grey)),
+                                                Icon(Icons.star,
+                                                    color: Colors.grey,
+                                                    size: 12),
+                                                Text(
+                                                  widget.constants.games1[index]
+                                                      ['size'],
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))),
                           ],
                         ),
                       ),
@@ -507,7 +541,7 @@ class _HomeState extends State<Home> {
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
                             Expanded(
@@ -516,8 +550,8 @@ class _HomeState extends State<Home> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                          widget.constants.games1[index]['image']),
+                                      image: NetworkImage(widget
+                                          .constants.games1[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -526,60 +560,66 @@ class _HomeState extends State<Home> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
-                                      children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                               BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                    widget.constants.games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 5),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                widget.constants.games1[index]['title'],
-                                                style:
+                                          image: DecorationImage(
+                                            image: NetworkImage(widget.constants
+                                                .games1[index]['image']),
+                                            fit: BoxFit.fill,
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['title'],
+                                            style:
                                                 TextStyle(color: Colors.white),
-                                              ),
-                                              Text(
-                                                widget.constants.games1[index]['subtitle'],
-                                                style: TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.grey),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(left: 15),
-                                                child: Row(
-                                                  children: [
-                                                    Text( widget.constants.games1[index]['rating'],
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            color: Colors.grey)),
-                                                    Icon(Icons.star,
-                                                        color: Colors.grey,
-                                                        size: 12),
-                                                    Text(
-                                                      widget.constants.games1[index]['size'],
-                                                      style: TextStyle(
-                                                          fontSize: 12,
-                                                          color: Colors.grey),
-                                                    )
-                                                  ],
-                                                ),
-                                              )
-                                            ],
                                           ),
-                                        )
-                                      ],
-                                    ))),
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['subtitle'],
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.grey),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                    widget.constants
+                                                            .games1[index]
+                                                        ['rating'],
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.grey)),
+                                                Icon(Icons.star,
+                                                    color: Colors.grey,
+                                                    size: 12),
+                                                Text(
+                                                  widget.constants.games1[index]
+                                                      ['size'],
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))),
                           ],
                         ),
                       ),
@@ -601,7 +641,7 @@ class _HomeState extends State<Home> {
                         decoration: BoxDecoration(
                             color: Colors.grey[900],
                             borderRadius:
-                            BorderRadius.all(Radius.circular(20))),
+                                BorderRadius.all(Radius.circular(20))),
                         child: Column(
                           children: [
                             Expanded(
@@ -610,8 +650,8 @@ class _HomeState extends State<Home> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
-                                      image: NetworkImage(
-                                          widget.constants.games1[index]['image']),
+                                      image: NetworkImage(widget
+                                          .constants.games1[index]['image']),
                                       fit: BoxFit.fill,
                                     )),
                               ),
@@ -620,60 +660,66 @@ class _HomeState extends State<Home> {
                                 flex: 2,
                                 child: Container(
                                     child: Row(
-                                      children: [
-                                        Container(
-                                          width: 60,
-                                          height: 50,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
+                                  children: [
+                                    Container(
+                                      width: 60,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
                                               BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                image: NetworkImage(
-                                                    widget.constants.games1[index]['image']),
-                                                fit: BoxFit.fill,
-                                              )),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 5),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                widget.constants.games1[index]['title'],
-                                                style:
+                                          image: DecorationImage(
+                                            image: NetworkImage(widget.constants
+                                                .games1[index]['image']),
+                                            fit: BoxFit.fill,
+                                          )),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 5),
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['title'],
+                                            style:
                                                 TextStyle(color: Colors.white),
-                                              ),
-                                              Text(
-                                                widget.constants.games1[index]['subtitle'],
-                                                style: TextStyle(
-                                                    fontSize: 13,
-                                                    color: Colors.grey),
-                                              ),
-                                              Padding(
-                                                padding:
-                                                const EdgeInsets.only(left: 15),
-                                                child: Row(
-                                                  children: [
-                                                    Text( widget.constants.games1[index]['rating'],
-                                                        style: TextStyle(
-                                                            fontSize: 12,
-                                                            color: Colors.grey)),
-                                                    Icon(Icons.star,
-                                                        color: Colors.grey,
-                                                        size: 12),
-                                                    Text(
-                                                      widget.constants.games1[index]['size'],
-                                                      style: TextStyle(
-                                                          fontSize: 12,
-                                                          color: Colors.grey),
-                                                    )
-                                                  ],
-                                                ),
-                                              )
-                                            ],
                                           ),
-                                        )
-                                      ],
-                                    ))),
+                                          Text(
+                                            widget.constants.games1[index]
+                                                ['subtitle'],
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.grey),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 15),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                    widget.constants
+                                                            .games1[index]
+                                                        ['rating'],
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.grey)),
+                                                Icon(Icons.star,
+                                                    color: Colors.grey,
+                                                    size: 12),
+                                                Text(
+                                                  widget.constants.games1[index]
+                                                      ['size'],
+                                                  style: TextStyle(
+                                                      fontSize: 12,
+                                                      color: Colors.grey),
+                                                )
+                                              ],
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ))),
                           ],
                         ),
                       ),
@@ -681,7 +727,6 @@ class _HomeState extends State<Home> {
                   },
                 ),
               ),
-
             ],
           ),
         ),

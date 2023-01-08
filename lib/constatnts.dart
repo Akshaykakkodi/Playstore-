@@ -1,12 +1,13 @@
 class Gameslist {
   List<Map> games1 = [
     {
-      "title": "Asphalt 9",
-      "image": "https://www.mobygames.com/images/covers/l/625217-asphalt-9-legends-android-front-cover.png",
-      "subtitle": "Racing",
-      "rating": "4.2",
-      "size": "1.9 GB"
+      "title": "PUBG",
+      "image": "https://3.bp.blogspot.com/-tvfZJCqn0fE/WucAtvhvxsI/AAAAAAAAAZY/Wg9JAqDHAJwIX_3qGwqBcY481KzqMg1CwCLcBGAs/s1600/PUBG-Mobile-cover.jpeg",
+      "subtitle": "Action",
+      "rating": "4",
+      "size": "1.6 GB"
     },
+
     {
       "title": "Need for speed",
       "image": "https://www.mobygames.com/images/covers/l/313759-need-for-speed-no-limits-android-front-cover.png",
@@ -14,19 +15,20 @@ class Gameslist {
       "rating": "4.3",
       "size": "2.3 GB"
     },
-    {
-      "title": "PUBG",
-      "image": "https://3.bp.blogspot.com/-tvfZJCqn0fE/WucAtvhvxsI/AAAAAAAAAZY/Wg9JAqDHAJwIX_3qGwqBcY481KzqMg1CwCLcBGAs/s1600/PUBG-Mobile-cover.jpeg",
-      "subtitle": "Action",
-      "rating": "4",
-      "size": "1.6 GB"
-    },
+
     {
       "title": "Real Racing",
       "image": "https://www.mobygames.com/images/covers/l/277127-real-racing-3-android-front-cover.jpg",
       "subtitle": "Racing",
       "rating": "3.5",
       "size": "800 MB"
+    },
+    {
+      "title": "Asphalt 9",
+      "image": "https://www.mobygames.com/images/covers/l/625217-asphalt-9-legends-android-front-cover.png",
+      "subtitle": "Racing",
+      "rating": "4.2",
+      "size": "1.9 GB"
     },
     {
       "title": "Fortnite",
